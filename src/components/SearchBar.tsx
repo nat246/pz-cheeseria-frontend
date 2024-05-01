@@ -1,12 +1,14 @@
-import { Button, Input } from "reactstrap";
+import { Button, Input, InputGroup } from "reactstrap";
 
 const SearchBar = () => {
   return (
     <div className="search">
-      <Input />
-      <Button color="primary" size="md">
-        Search
-      </Button>
+      <InputGroup>
+        <Input />
+        <Button color="primary" size="md">
+          Search
+        </Button>
+      </InputGroup>
     </div>
   );
 };
