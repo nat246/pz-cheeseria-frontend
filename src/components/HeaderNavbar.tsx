@@ -3,7 +3,7 @@ import { Navbar, NavbarBrand, NavItem } from "reactstrap";
 
 const HeaderNavbar = () => {
   return (
-    <div className="">
+    <div>
       <Navbar className="navbar flex" expand="md" light>
         <NavbarBrand className="" tag={Link} to="/">PZ Cheeseria</NavbarBrand>
 

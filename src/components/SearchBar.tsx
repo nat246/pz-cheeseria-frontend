@@ -16,7 +16,7 @@ const SearchBar = ({ setSearchQuery }: SearchProps) => {
   // };
 
   return (
-    <div className="search">
+    <div className="search w-full">
       <InputGroup>
         <Input value={inputValue} onChange={handleInputChange} />
         <Button

@@ -4,21 +4,33 @@ import PriceCalculator from "../components/PriceCalculator";
 
 const ProductPage = () => {
   const { id } = useParams();
-  const product = useProduct(id ?? '');
+  const product = useProduct(id ?? "");
 
   if (!product) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   return (
-    <div>
-      <img alt={product.name} src={product.image} />
-      <h2>{product.name}</h2>
-      <h3>{`$${product.price.toFixed(2)}`}/kg</h3>
-      <h3>Cheese color: {product.color}</h3>
-      <p>{product.description}</p>
+    <div className="flex flex-col gap-6">
+      <section className="flex gap-16">
+        <img className="w-1/2" alt={product.name} src={product.image} />
 
-      <PriceCalculator price={product.price} />
+        <span className="flex flex-col justify-around">
+          <div>
+            <h1 className="text-4xl">{product.name}</h1>
+            <h3 className="text-lg">{`$${product.price.toFixed(2)}`}/kg</h3>
+
+            <h3>Cheese color: {product.color}</h3>
+          </div>
+
+          <div>
+            <PriceCalculator price={product.price} />
+
+          </div>
+        </span>
+      </section>
+
+      <p>{product.description}</p>
     </div>
   );
 };

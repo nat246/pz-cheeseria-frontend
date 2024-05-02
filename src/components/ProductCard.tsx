@@ -11,12 +11,17 @@ type ProductCardProps = {
 
 const ProductCard = ({ id, name, image, price, color }: ProductCardProps) => {
   const navigate = useNavigate();
-  
+
   return (
-    <Card onClick={() => {navigate(`/product/${id}`)}}>
-      <img alt={name} src={image} />
-      <CardBody>
-        <CardTitle tag="h4">{name}</CardTitle>
+    <Card className="cursor-pointer w-64 h-80 m-4 p-0"
+      onClick={() => {
+        navigate(`/product/${id}`);
+      }}
+    >
+      <img className="w-full h-60" alt={name} src={image} />
+
+      <CardBody className="flex flex-col">
+        <CardTitle className="justify-start text-lg font-semibold" tag="h4">{name}</CardTitle>
 
         <CardSubtitle>${`${price.toFixed(2)}`}</CardSubtitle>
         <CardSubtitle>{`Color: ${color}`}</CardSubtitle>

@@ -7,7 +7,7 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Prodcuction
-FROM nginx:latest AS production
+FROM nginx:alpine AS production
 # Copy build assets from builder
 COPY --from=builder /app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
