@@ -1,3 +1,4 @@
+import CheeseFilter from "../components/CheeseFilter";
 import ProductCard from "../components/ProductCard";
 import { useProducts } from "../hooks/useFetch";
 
@@ -8,6 +9,7 @@ const BrowsePage = () => {
       This is Browse Page
       {/* Add search bar */}
       {/* Add fitlers */}
+      <CheeseFilter />
       {
         /* Cards */
         products.map((product) => (
