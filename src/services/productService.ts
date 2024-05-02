@@ -26,25 +26,23 @@ export const fetchProduct = async (id: string): Promise<Product> => {
   return await res.json();
 };
 
-export const fetchProductFilterResults = async (search?:string, color?: CheeseColor): Promise<Product[]> => {
-  
-  // if (color === CheeseColor.ALL || !color) {
-  //   return [];
-  // }
-
+export const fetchProductFilterResults = async (
+  search?: string,
+  color?: CheeseColor
+): Promise<Product[]> => {
   let url = `${API_URL}/products/cheese/?`;
 
-  if (search && (color === CheeseColor.ALL || !color)){
-    url += `search=${search}`
+  if (search && (color === CheeseColor.ALL || !color)) {
+    url += `search=${search}`;
   } else if (color && color !== CheeseColor.ALL && !search) {
-    url += `color=${color}`
-  } else if (search && color && color !== CheeseColor.ALL){
-    url += `search=${search}&color=${color}`
+    url += `color=${color}`;
+  } else if (search && color && color !== CheeseColor.ALL) {
+    url += `search=${search}&color=${color}`;
   } else {
     return [];
   }
 
-  console.log(url)
+  console.log(url);
 
   const res = await fetch(url, {
     method: "GET",
