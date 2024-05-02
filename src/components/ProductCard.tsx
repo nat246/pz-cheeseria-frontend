@@ -1,8 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import { Card, CardBody, CardSubtitle, CardTitle } from "reactstrap";
-import { Product } from "../data/product.interface";
 
-const ProductCard = ({ id, name, image, price, color }: Product) => {
+type ProductCardProps = {
+  id: string;
+  name: string;
+  image: string;
+  price: number;
+  color: string;
+};
+
+const ProductCard = ({ id, name, image, price, color }: ProductCardProps) => {
   const navigate = useNavigate();
   
   return (
