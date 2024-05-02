@@ -1,6 +1,7 @@
 # React + TypeScript + Vite
 
-##To Run
+## To Run Application
+
 `npm run dev`
 
 ___
