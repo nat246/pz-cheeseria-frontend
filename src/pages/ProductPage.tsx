@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useProduct } from "../hooks/useFetch";
+import PriceCalculator from "../components/PriceCalculator";
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -16,6 +17,8 @@ const ProductPage = () => {
       <h3>{`$${product.price.toFixed(2)}`}</h3>
       <h3>Cheese color: {product.color}</h3>
       <p>{product.description}</p>
+
+      <PriceCalculator price={product.price} />
     </div>
   );
 };
