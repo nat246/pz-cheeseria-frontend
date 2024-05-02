@@ -32,6 +32,7 @@ export const fetchProductFilterResults = async (
 ): Promise<Product[]> => {
   let url = `${API_URL}/products/cheese/?`;
 
+  // Negate CheeseColor.ALL from being appended to the URL since 'ALL' is not a color
   if (search && (color === CheeseColor.ALL || !color)) {
     url += `search=${search}`;
   } else if (color && color !== CheeseColor.ALL && !search) {
@@ -41,8 +42,6 @@ export const fetchProductFilterResults = async (
   } else {
     return [];
   }
-
-  console.log(url);
 
   const res = await fetch(url, {
     method: "GET",
