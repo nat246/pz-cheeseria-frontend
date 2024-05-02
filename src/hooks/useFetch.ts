@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
-import { fetchProduct, fetchProducts } from "../services/productService";
+import {
+  fetchProduct,
+  fetchProductFilterResults,
+  fetchProducts,
+} from "../services/productService";
 import { Product } from "../data/product.interface";
+import { CheeseColor } from "../data/cheese-color.enum";
 
 export function useProducts(): Product[] {
   const [products, setProducts] = useState<Product[]>([]);
@@ -22,4 +27,16 @@ export function useProduct(productId: string): Product | null {
   });
 
   return product;
+}
+
+export function useProductFilterResults(search?: string, color?: CheeseColor): Product[] {
+  const [results, setResults] = useState<Product[]>([]);
+
+  useEffect(() => {
+    fetchProductFilterResults(search, color).then((res: Product[]) => {
+      setResults(res);
+    });
+  }, [search, color]);
+
+  return results;
 }

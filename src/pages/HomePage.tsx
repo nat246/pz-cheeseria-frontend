@@ -1,11 +1,12 @@
 import SearchBar from "../components/SearchBar";
+import { SearchProps } from "../data/search-prop.interface";
 
-const HomePage = () => {
+const HomePage = ({setSearchQuery}: SearchProps) => {
   return (
     <div>
       <h2 className="text-5xl">Discover your Cheese Nirvana</h2>
 
-      <SearchBar />
+      <SearchBar setSearchQuery={setSearchQuery} />
     </div>
   );
 };

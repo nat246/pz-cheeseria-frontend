@@ -1,4 +1,5 @@
 export enum CheeseColor {
+  ALL = "ALL",
   BLUE = "BLUE",
   BLUE_GREY = "BLUE-GREY",
   BROWN = "BROWN",
