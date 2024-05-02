@@ -4,7 +4,7 @@ import PriceCalculator from "../components/PriceCalculator";
 
 const ProductPage = () => {
   const { id } = useParams();
-  const product = useProduct(id);
+  const product = useProduct(id ?? '');
 
   if (!product) {
     return <div>Loading...</div>
